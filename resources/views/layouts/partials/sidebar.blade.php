@@ -2,12 +2,7 @@
     <div class="collapse collapse-horizontal" id="collapseWidthExample">
         <div class="card card-body bg-light" style="width: 300px;">
             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-                <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                    <span class="fs-4">Home</span>
-                </a>
+                
                 <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li>
@@ -21,12 +16,7 @@
                         </li>
                     </ul>   
                 <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                        id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
-                    </a>
+                <div class="dropdown"> 
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                         <li><a class="dropdown-item" href="#">New project...</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>

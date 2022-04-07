@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration
             $table->integer('ci')->unique();
             $table->string('nombre',255); 
             $table->string('email',255)->unique();
+            $table->string('telefono',8);
+            $table->string('genero',1); 
             $table->string('password',255); 
         });
 
-        DB::table('users')->insert(array('ci' => '753159','nombre'=>'stephani','email'=>'stephani.hc@gmail.com','password' => '$2y$10$x4rfS1iYXv65UxifZKuqHu38X/h5/2uYYZfQg833IIp1IfIxjJwZS'));
+        DB::table('users')->insert(array('ci' => '753159','nombre'=>'stephani','email'=>'stephani.hc@gmail.com','telefono'=>'75647167','genero'=>'1','password' => '$2y$10$x4rfS1iYXv65UxifZKuqHu38X/h5/2uYYZfQg833IIp1IfIxjJwZS'));
     
     }
 

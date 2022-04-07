@@ -23,6 +23,8 @@
                                         <th>CI</th>
                                         <th>Nombre</th>
                                         <th>Email</th>
+                                        <th>Telefono</th>
+                                        <th>Genero</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -32,6 +34,14 @@
                                             <td>{{ $user->ci }}</td>
                                             <td>{{ $user->nombre }}</td> 
                                             <td>{{ $user->email }}</td>
+                                            <td>{{ $user->telefono }}</td>
+                                            <td>
+                                                @if ($user->genero == '1')
+                                                    Femenino
+                                                @else
+                                                    Masculino
+                                                @endif
+                                            </td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ url('/user/' . $user->ci . '/edit') }}"

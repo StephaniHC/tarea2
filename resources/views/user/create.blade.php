@@ -33,6 +33,26 @@
                                 <div class="col-md-10">
                                     <input type="email" name="email" id="email" placeholder="Pepito@gmail.com"
                                         class="form-control" required>
+                                    @if ($errors->has('email'))
+                                        <span class= "error text-danger" for = "input-email"> {{$errors->first('email')}}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="telefono" class="col-md-2 col-form-label ">Telefono </label>
+                                <div class="col-md-10">
+                                    <input type="number" name="telefono" id="telefono" placeholder="74874877"
+                                        class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label for="genero" class="col-md-2 col-form-label ">Genero </label>
+                                <div class="col-md-10">
+                                    <select class="form-control" id="genero" name="genero" required>
+                                        <option value="1">Femenino</option>
+                                        <option value="2">Masculino</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-2">

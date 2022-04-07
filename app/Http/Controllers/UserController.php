@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $datos['user'] = User::select('ci','nombre','email')
+        $datos['user'] = User::select('ci','nombre','email', 'telefono','genero')
         ->get();
         return view('user.index', $datos);
    
@@ -29,7 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        $users = new User();
+        return view('user.create', compact('users'));
      }
 
     /**
@@ -40,12 +41,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $users = new User();
-        $users->ci = $request->ci;
+        request()->validate(User::$rules);
+        $users = User::create($request->all());
+
+       /* $users->ci = $request->ci;
         $users->nombre = $request->nombre;
         $users->email = $request->email;
+        $users->telefono = $request->telefono;
+        $users->genero = $request->genero;
         $users->password = Hash::make($request->password);
-        $users->save();
+        $users->save();*/
 
         return redirect('/user')->with('status', 'Usuario Creado Exitosamente!');
     }
@@ -57,9 +62,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(int $ci)
-    {
-        $user=User::findOrFail($ci);
-        return view('user.edit',compact('user', 'user'));
+    { 
+        $user = User::find($ci);
+
+        return view('user.edit', compact('user'));
+
     } 
 
     /**
@@ -71,9 +78,13 @@ class UserController extends Controller
      */
     public function update(Request $request, int $ci)
     {
+        request()->validate(User::$rules);
+        
         $users = User::find($ci);
         $users->nombre = $request->nombre;
         $users->email = $request->email;
+        $users->telefono = $request->telefono;
+        $users->genero = $request->email;
         $users->save();
         return redirect('/user')->with('status', 'Usuario Actualizado Exitosamente!');
     }

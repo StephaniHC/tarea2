@@ -6,19 +6,22 @@
             <div class="col-xs|sm|md|lg|xl-1-12">
                 <div class="card bg-light border border-2" style="padding: 30px;">
                     <div class="card-header">
-                        <h4 class="fw-bold">Editar Usuario: {{ $users->ci }}</h4>
+                        <h4 class="fw-bold">Editar Usuario: {{ $user->ci }}</h4>
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ url('/user/' . $users->ci) }}" class="row g-3">
+                        <form method="POST" action="{{ url('/user/' . $user->ci) }}" class="row g-3">
                             @csrf
                             {{ method_field('PUT') }}
 
+                            <br>
+
+                            <br />
                             <div class="row mb-3">
                                 <label for="nombre" class="col-md-2 col-form-label ">Nombre</label>
                                 <div class="col-md-10">
                                     <input type="text" name="nombre" id="nombre" class="form-control" required
-                                        value="{{ $users->nombre }}">
+                                        value="{{ $user->nombre }}">
                                 </div>
                             </div>
                             <br>
@@ -27,9 +30,21 @@
                                 <label for="email" class="col-md-2 col-form-label ">Email</label>
                                 <div class="col-md-10">
                                     <input type="email" name="email" id="email" class="form-control" required
-                                        value="{{ $users->email }}">
+                                        value="{{ $user->email }}">
+                                        @if ($errors->has('email'))
+                                        <span class= "error text-danger" for = "input-email"> {{$errors->first('email')}}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
+                            <br />
+                            <div class="row mb-3">
+                                <label for="telefono" class="col-md-2 col-form-label ">Telefono</label>
+                                <div class="col-md-10">
+                                    <input type="number" name="telefono" id="telefono" class="form-control" required
+                                        value="{{ $user->telefono }}">
+                                </div>
+                            </div> 
                             <div class="row mb-0">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <div class="col-md-10 offset-md-2">
