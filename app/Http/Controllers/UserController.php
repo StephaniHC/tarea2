@@ -44,14 +44,6 @@ class UserController extends Controller
         request()->validate(User::$rules);
         $users = User::create($request->all());
 
-       /* $users->ci = $request->ci;
-        $users->nombre = $request->nombre;
-        $users->email = $request->email;
-        $users->telefono = $request->telefono;
-        $users->genero = $request->genero;
-        $users->password = Hash::make($request->password);
-        $users->save();*/
-
         return redirect('/user')->with('status', 'Usuario Creado Exitosamente!');
     }
 

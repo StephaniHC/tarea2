@@ -16,7 +16,7 @@
                                 <label for="ci" class="col-md-2 col-form-label ">CI </label>
                                 <div class="col-md-10">
                                     <input type="number" name="ci" placeholder="8479154" class="form-control" min="1"
-                                        step="1" required>
+                                        step="1" value = "{{old('ci')}}" required>
                                 </div>
                             </div>
 
@@ -24,7 +24,7 @@
                                 <label for="nombre" class="col-md-2 col-form-label ">Nombre </label>
                                 <div class="col-md-10">
                                     <input type="text" name="nombre" id="nombre" placeholder="Pepito Perez"
-                                        class="form-control" required>
+                                        class="form-control" value = "{{old('nombre')}}" required>
                                 </div>
                             </div>
 
@@ -43,15 +43,15 @@
                                 <label for="telefono" class="col-md-2 col-form-label ">Telefono </label>
                                 <div class="col-md-10">
                                     <input type="number" name="telefono" id="telefono" placeholder="74874877"
-                                        class="form-control" required>
+                                        class="form-control" value = "{{old('telefono')}}" required>
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <label for="genero" class="col-md-2 col-form-label ">Genero </label>
                                 <div class="col-md-10">
                                     <select class="form-control" id="genero" name="genero" required>
-                                        <option value="1">Femenino</option>
                                         <option value="2">Masculino</option>
+                                        <option value="1">Femenino</option>
                                     </select>
                                 </div>
                             </div>
